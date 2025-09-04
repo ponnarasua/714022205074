@@ -10,8 +10,7 @@ router.post("/", async (req, res) => {
 
   if (!originalUrl) return res.status(400).json({ error: "URL is required" });
   if (!validity || isNaN(validity) || validity <= 0)
-    return res.status(400).json({ error: "Validity (seconds) required" });
-
+    validity = 30;
   try {
     const code = nanoid(6);
     const expiresAt = new Date(Date.now() + validity * 1000);
