@@ -6,13 +6,13 @@ const router = express.Router();
 
 // Create new short URL
 router.post("/", async (req, res) => {
-  const { originalUrl, validity } = req.body;
+  const { originalUrl, validity , customId } = req.body;
 
   if (!originalUrl) return res.status(400).json({ error: "URL is required" });
   if (!validity || isNaN(validity) || validity <= 0)
     validity = 30;
   try {
-    const code = nanoid(6);
+    const code = customId || nanoid(8);
     const expiresAt = new Date(Date.now() + validity * 1000);
 
     const short = await ShortUrl.create({ code, originalUrl, expiresAt });

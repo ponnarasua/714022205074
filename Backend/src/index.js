@@ -1,12 +1,12 @@
+import cors from "cors";
 import express from "express";
 import dotenv from "dotenv";
 import connectDB from "./db.js";
 import shortenRoutes from "./routes/shorten.js";
 import redirectRoutes from "./routes/redirect.js";
-
 dotenv.config();
 const app = express();
-
+app.use(cors({ orgin: "*" }));
 app.use(express.json());
 
 // Routes
