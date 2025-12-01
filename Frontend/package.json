@@ -10,12 +10,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1",
-    "@mui/material": "^6.1.2",
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.3",
-    "axios": "^1.7.2"
+    "@mui/icons-material": "^6.5.0",
+    "@mui/material": "^6.1.2",
+    "axios": "^1.7.2",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-router-dom": "^7.9.6"
   },
   "devDependencies": {
     "@eslint/js": "^9.33.0",
